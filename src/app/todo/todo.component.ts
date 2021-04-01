@@ -8,10 +8,12 @@ import { Todo } from "src/app/todo";
 })
 export class TodoComponent implements OnInit {
 
+  isCompleted = true;
+
   todo: Todo[] = [
     {
       task: "Bug Matt to post the schedule",
-      completed: false,
+      completed: true,
     },
     {
       task: "Bug Henry to post our grades",
@@ -26,10 +28,18 @@ export class TodoComponent implements OnInit {
       completed: false,
     }
   ];
-  
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  updateCompleted() {
+    this.isCompleted = !this.isCompleted;
+  }
+
+  addItem() {
+
   }
 
 }

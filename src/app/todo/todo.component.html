@@ -2,8 +2,15 @@
     <div class="container">
         <h1>TODO List</h1>
         <p>A place to store your todos</p>
-        <ol class="list" *ngFor="let todo of todo" [todo]="todo">
-            <li> {{todo.task}}</li>
+
+        <input type="text" placeholder="Filder your to-dos"/>
+       
+        <ol class="list" >
+            <li [ngClass]="{completed: isCompleted}" *ngFor="let todo of todo" [todo]="todo"> {{todo.task}}</li>
         </ol>
+
+        <input type="text" placeholder="Add your to-do"/>
+
+        <button class="addButton" (click)="addItem()">Add</button> 
     </div>
 </body>
