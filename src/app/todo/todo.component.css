@@ -35,7 +35,7 @@ input {
 
 }
 
-.completed {
+.strikethrough {
     text-decoration: line-through;
 }
 

@@ -6,7 +6,7 @@
         <input type="text" placeholder="Filter your to-dos"/>
        
         <ol class="list" >
-            <li [ngClass]="{completed: isCompleted}" *ngFor="let todo of todo" [todo]="todo"> {{todo.task}}</li>
+            <li [ngClass]="{strikethrough: todo.completed}" *ngFor="let todo of todo" [todo]="todo"> {{todo.task}}</li>
         </ol>
 
         <input type="text" placeholder="Add your to-do"/>
