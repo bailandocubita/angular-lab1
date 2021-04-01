@@ -1,0 +1,9 @@
+<body>
+    <div class="container">
+        <h1>TODO List</h1>
+        <p>A place to store your todos</p>
+        <ol class="list" *ngFor="let todo of todo" [todo]="todo">
+            <li> {{todo.task}}</li>
+        </ol>
+    </div>
+</body>
