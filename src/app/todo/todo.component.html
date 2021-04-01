@@ -7,10 +7,10 @@
        
         <ol class="list" >
             
-            <li [ngClass]="{strikethrough: todo.completed}" *ngFor="let todo of todos; index as i">
-                <button class="completeButton" (click)="updateCompleted()">complete</button>
-                <p>{{todo.task}}</p>
-                <button>X</button>
+            <li *ngFor="let todo of todos; index as i">
+                <button class="completeButton" (click)="updateCompleted()" *ngIf="!todo.completed">complete</button>
+                <p [ngClass]="{strikethrough: todo.completed}" >{{todo.task}}</p>
+                <button class="xButton">X</button>
             </li>
         </ol>
 
