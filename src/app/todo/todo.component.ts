@@ -11,7 +11,7 @@ export class TodoComponent implements OnInit {
 
   isCompleted = true;
 
-  todo: Todo[] = [
+  todos: Todo[] = [
     {
       task: "Bug Matt to post the schedule",
       completed: true,

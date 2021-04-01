@@ -39,6 +39,12 @@ input {
     text-decoration: line-through;
 }
 
+.completeButton {
+    color: #ff69b4;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+}
+
 h1,
 p {
     margin-left: 10px;
