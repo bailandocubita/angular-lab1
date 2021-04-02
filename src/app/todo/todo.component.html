@@ -3,13 +3,13 @@
         <h1>TODO List</h1>
         <p>A place to store your todos</p>
 
-        <input type="text" placeholder="Filter your to-dos"/>
+        <input [(ngModel)]="searchText" type="text" placeholder="Filter your to-dos"/>
        
         <ol class="list" >
             
-            <li *ngFor="let todo of todos; index as i">
+            <li *ngFor="let todo of todos | filter:searchText ; index as i">
                 <p>{{ i + 1 }}.</p>
-                <button class="completeButton" (click)="updateCompleted()" *ngIf="!todo.completed">complete</button>
+                <button class="completeButton" (click)="completeTask()" *ngIf="!todo.completed">complete</button>
                 <p [ngClass]="{strikethrough: todo.completed}" >{{todo.task}}</p>
                 <button class="xButton">X</button>
             </li>
@@ -18,7 +18,7 @@
 
         <input type="text" placeholder="Add your to-do"/>
 
-        <button class="addButton" (click)="addItem()">Add</button> 
+        <button class="addButton" (click)="addTask()">Add</button> 
     </div>
     <!-- <fa-icon [icon]="faCoffee"></fa-icon>
     <i class="fas fa-times"></i> -->

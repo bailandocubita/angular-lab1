@@ -10,6 +10,7 @@ import { Todo } from "src/app/todo";
 export class TodoComponent implements OnInit {
 
   isCompleted = true;
+  searchText: string | null = null;
 
   todos: Todo[] = [
     {
@@ -35,11 +36,15 @@ export class TodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateCompleted() {
+  completeTask() {
     this.isCompleted = !this.isCompleted;
   }
 
-  addItem() {
+  addTask() {
+
+  }
+
+  removeTask() {
 
   }
 
