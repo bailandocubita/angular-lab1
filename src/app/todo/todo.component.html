@@ -8,6 +8,7 @@
         <ol class="list" >
             
             <li *ngFor="let todo of todos; index as i">
+                <p>{{ i + 1 }}.</p>
                 <button class="completeButton" (click)="updateCompleted()" *ngIf="!todo.completed">complete</button>
                 <p [ngClass]="{strikethrough: todo.completed}" >{{todo.task}}</p>
                 <button class="xButton">X</button>
