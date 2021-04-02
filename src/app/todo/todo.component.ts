@@ -9,8 +9,9 @@ import { Todo } from "src/app/todo";
 })
 export class TodoComponent implements OnInit {
 
-  isCompleted = true;
+  
   searchText: string | null = null;
+  index = null;
 
   todos: Todo[] = [
     {
@@ -37,7 +38,7 @@ export class TodoComponent implements OnInit {
   }
 
   completeTask() {
-    this.isCompleted = !this.isCompleted;
+    
   }
 
   addTask() {
@@ -45,7 +46,7 @@ export class TodoComponent implements OnInit {
   }
 
   removeTask() {
-
+    this.todos.splice(this.index, 1);
   }
 
 }
