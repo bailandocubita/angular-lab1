@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CompileTemplateMetadata } from '@angular/compiler';
+import { Component, OnInit, ɵisBoundToModule__POST_R3__ } from '@angular/core';
 import { Todo } from "src/app/todo";
 
 
@@ -11,7 +12,8 @@ export class TodoComponent implements OnInit {
 
   
   searchText: string | null = null;
-  index = null;
+  newTask: string;
+
 
   todos: Todo[] = [
     {
@@ -37,16 +39,16 @@ export class TodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  completeTask() {
-    
+  completeTask(todo: Todo) {
+    todo.completed = true;
   }
 
   addTask() {
-
+    this.todos.push({task: this.newTask, completed: false});
   }
 
-  removeTask() {
-    this.todos.splice(this.index, 1);
+  removeTask(todo: Todo) {
+    this.todos.splice(this.todos.indexOf(todo), 1);
   }
 
 }
