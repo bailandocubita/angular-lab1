@@ -45,6 +45,7 @@ export class TodoComponent implements OnInit {
 
   addTask() {
     this.todos.push({task: this.newTask, completed: false});
+    this.newTask = "";
   }
 
   removeTask(todo: Todo) {
