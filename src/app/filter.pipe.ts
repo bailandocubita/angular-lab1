@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
     if (!searchText) {
       return todos;
     }
-    return todos.filter((todo:Todo) => todo.task.includes(searchText));
+    return todos.filter((todo:Todo) => todo.task.toLowerCase().includes(searchText.toLowerCase()));
   }
 
 }
